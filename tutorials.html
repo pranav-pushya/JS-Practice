@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="JSLab Tutorials — 45 lectures covering JavaScript fundamentals, DOM, async, and Git.">
+  <title>Tutorials — JSLab</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='12' fill='%23f7df1e'/><text x='50' y='65' font-size='42' font-weight='bold' text-anchor='middle' fill='%23000'>JS</text></svg>">
+  <link rel="stylesheet" href="../css/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/atom-one-dark.min.css">
+</head>
+<body>
+
+<div class="top-progress-bar"><div class="fill" id="top-fill"></div></div>
+<button class="sidebar-toggle" id="sidebar-toggle" aria-label="Toggle sidebar">☰</button>
+
+<nav class="sidebar" id="sidebar" aria-label="Main navigation">
+  <div class="sidebar-header">
+    <div class="sidebar-logo">
+      <div class="logo-icon">JS</div>
+      <div class="logo-text">JS<span>Lab</span></div>
+    </div>
+  </div>
+  <div class="sidebar-nav">
+    <a href="../index.html"><span class="nav-icon">🏠</span> Home</a>
+    <a href="tutorials.html" class="active"><span class="nav-icon">📖</span> Tutorials</a>
+    <a href="playground.html"><span class="nav-icon">💻</span> Playground</a>
+    <a href="quizzes.html"><span class="nav-icon">📝</span> Quizzes</a>
+    <a href="git.html"><span class="nav-icon">🔧</span> Git Lab</a>
+  </div>
+  <div class="sidebar-footer">Built by Pranav Pushya<br>Frontend Engineering-1 | Chitkara University</div>
+</nav>
+
+<div class="app-container">
+  <main class="main-content">
+    <div class="section-header" style="margin-bottom:16px;">
+      <h1 style="font-size:1.8rem;">📖 Tutorials</h1>
+      <p>45 lectures across 3 units — your complete JavaScript syllabus</p>
+    </div>
+
+    <div class="search-bar" id="search-bar">
+      <span class="search-icon">🔍</span>
+      <input type="text" id="search-input" placeholder="Search topics... (press / to focus)" aria-label="Search tutorials">
+    </div>
+
+    <div class="tutorials-layout">
+      <!-- Lecture Sidebar -->
+      <aside class="tutorials-sidebar" id="tutorials-sidebar"></aside>
+      <!-- Lecture Content -->
+      <div class="tutorials-content" id="lecture-content">
+        <div class="glass-card" style="text-align:center;padding:48px 24px;">
+          <p style="font-size:1.1rem;color:var(--text-secondary);">Select a lecture from the sidebar to begin learning.</p>
+        </div>
+      </div>
+    </div>
+
+    <footer class="site-footer">Built by Pranav Pushya | Frontend Engineering-1 | Chitkara University</footer>
+  </main>
+</div>
+
+<!-- Mini Quiz Modal -->
+<div class="modal-overlay" id="mini-quiz-modal">
+  <div class="modal">
+    <div class="modal-header">
+      <h3 id="mini-quiz-title">Mini Quiz</h3>
+      <button class="modal-close" id="mini-quiz-close" aria-label="Close modal">&times;</button>
+    </div>
+    <div id="mini-quiz-body"></div>
+  </div>
+</div>
+
+<button class="back-to-top" id="back-to-top" aria-label="Back to top">↑</button>
+<div class="copy-toast" id="copy-toast">Copied!</div>
+
+<script src="../js/progress.js"></script>
+<script src="../js/main.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+<script src="../js/tutorials-data.js"></script>
+<script src="../js/tutorials-data2.js"></script>
+<script src="../js/tutorials-data3.js"></script>
+<script src="../js/tutorials.js"></script>
+</body>
+</html>

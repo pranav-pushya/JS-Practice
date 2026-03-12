@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="JSLab Git Lab — Learn Git commands with an interactive cheatsheet and terminal simulator.">
+  <title>Git Lab — JSLab</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='12' fill='%23f7df1e'/><text x='50' y='65' font-size='42' font-weight='bold' text-anchor='middle' fill='%23000'>JS</text></svg>">
+  <link rel="stylesheet" href="../css/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<div class="top-progress-bar"><div class="fill" id="top-fill"></div></div>
+<button class="sidebar-toggle" id="sidebar-toggle" aria-label="Toggle sidebar">☰</button>
+
+<nav class="sidebar" id="sidebar" aria-label="Main navigation">
+  <div class="sidebar-header">
+    <div class="sidebar-logo">
+      <div class="logo-icon">JS</div>
+      <div class="logo-text">JS<span>Lab</span></div>
+    </div>
+  </div>
+  <div class="sidebar-nav">
+    <a href="../index.html"><span class="nav-icon">🏠</span> Home</a>
+    <a href="tutorials.html"><span class="nav-icon">📖</span> Tutorials</a>
+    <a href="playground.html"><span class="nav-icon">💻</span> Playground</a>
+    <a href="quizzes.html"><span class="nav-icon">📝</span> Quizzes</a>
+    <a href="git.html" class="active"><span class="nav-icon">🔧</span> Git Lab</a>
+  </div>
+  <div class="sidebar-footer">Built by Pranav Pushya<br>Frontend Engineering-1 | Chitkara University</div>
+</nav>
+
+<div class="app-container">
+  <main class="main-content">
+    <div class="section-header" style="margin-bottom:16px;">
+      <h1 style="font-size:1.8rem;">🔧 Git Lab</h1>
+      <p>Interactive Git cheatsheet and terminal simulator</p>
+    </div>
+
+    <!-- Git Workflow Visual -->
+    <div class="section">
+      <div class="section-header"><h2>🔄 Git Workflow</h2></div>
+      <div class="glass-card">
+        <div class="git-workflow">
+          <div class="git-zone working"><h4>Working Directory</h4><p>Your files</p></div>
+          <div class="git-arrow"><span class="arrow-line">→</span><span class="arrow-label">git add</span></div>
+          <div class="git-zone staging"><h4>Staging Area</h4><p>Ready to commit</p></div>
+          <div class="git-arrow"><span class="arrow-line">→</span><span class="arrow-label">git commit</span></div>
+          <div class="git-zone local"><h4>Local Repo</h4><p>Commit history</p></div>
+          <div class="git-arrow"><span class="arrow-line">→</span><span class="arrow-label">git push</span></div>
+          <div class="git-zone remote"><h4>Remote (GitHub)</h4><p>Cloud backup</p></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Git Commands Cheatsheet -->
+    <div class="section">
+      <div class="section-header"><h2>📋 Git Commands Cheatsheet</h2></div>
+      <div class="git-commands-grid">
+        <div class="glass-card git-cmd-card">
+          <h4>Setup</h4>
+          <div class="cmd-item"><code>git init</code><span class="cmd-desc">Initialize a new repository</span></div>
+          <div class="cmd-item"><code>git clone &lt;url&gt;</code><span class="cmd-desc">Clone a remote repository</span></div>
+          <div class="cmd-item"><code>git config --global user.name</code><span class="cmd-desc">Set your name</span></div>
+          <div class="cmd-item"><code>git config --global user.email</code><span class="cmd-desc">Set your email</span></div>
+        </div>
+        <div class="glass-card git-cmd-card">
+          <h4>Basic Workflow</h4>
+          <div class="cmd-item"><code>git status</code><span class="cmd-desc">See changed files</span></div>
+          <div class="cmd-item"><code>git add &lt;file&gt;</code><span class="cmd-desc">Stage a file</span></div>
+          <div class="cmd-item"><code>git add .</code><span class="cmd-desc">Stage all changes</span></div>
+          <div class="cmd-item"><code>git commit -m "msg"</code><span class="cmd-desc">Commit with message</span></div>
+          <div class="cmd-item"><code>git log --oneline</code><span class="cmd-desc">View compact history</span></div>
+        </div>
+        <div class="glass-card git-cmd-card">
+          <h4>Branching</h4>
+          <div class="cmd-item"><code>git branch</code><span class="cmd-desc">List all branches</span></div>
+          <div class="cmd-item"><code>git branch &lt;name&gt;</code><span class="cmd-desc">Create a new branch</span></div>
+          <div class="cmd-item"><code>git checkout &lt;branch&gt;</code><span class="cmd-desc">Switch to a branch</span></div>
+          <div class="cmd-item"><code>git checkout -b &lt;name&gt;</code><span class="cmd-desc">Create + switch</span></div>
+          <div class="cmd-item"><code>git merge &lt;branch&gt;</code><span class="cmd-desc">Merge branch into current</span></div>
+          <div class="cmd-item"><code>git branch -d &lt;name&gt;</code><span class="cmd-desc">Delete a branch</span></div>
+        </div>
+        <div class="glass-card git-cmd-card">
+          <h4>Remote</h4>
+          <div class="cmd-item"><code>git remote add origin &lt;url&gt;</code><span class="cmd-desc">Add remote</span></div>
+          <div class="cmd-item"><code>git push origin main</code><span class="cmd-desc">Push to remote</span></div>
+          <div class="cmd-item"><code>git pull origin main</code><span class="cmd-desc">Pull from remote</span></div>
+          <div class="cmd-item"><code>git fetch</code><span class="cmd-desc">Download remote changes</span></div>
+        </div>
+        <div class="glass-card git-cmd-card">
+          <h4>Undo / Fix</h4>
+          <div class="cmd-item"><code>git diff</code><span class="cmd-desc">See unstaged changes</span></div>
+          <div class="cmd-item"><code>git stash</code><span class="cmd-desc">Temporarily save changes</span></div>
+          <div class="cmd-item"><code>git stash pop</code><span class="cmd-desc">Restore stashed changes</span></div>
+          <div class="cmd-item"><code>git reset &lt;file&gt;</code><span class="cmd-desc">Unstage a file</span></div>
+          <div class="cmd-item"><code>git checkout -- &lt;file&gt;</code><span class="cmd-desc">Discard file changes</span></div>
+        </div>
+        <div class="glass-card git-cmd-card">
+          <h4>Info</h4>
+          <div class="cmd-item"><code>git log</code><span class="cmd-desc">Full commit history</span></div>
+          <div class="cmd-item"><code>git log --oneline --graph</code><span class="cmd-desc">Visual branch graph</span></div>
+          <div class="cmd-item"><code>git show &lt;hash&gt;</code><span class="cmd-desc">Show commit details</span></div>
+          <div class="cmd-item"><code>git remote -v</code><span class="cmd-desc">List remote repos</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Git Terminal Simulator -->
+    <div class="section">
+      <div class="section-header"><h2>🖥️ Git Terminal Simulator</h2><p>Practice Git commands in a safe environment</p></div>
+      <div class="git-terminal">
+        <div class="terminal-header">
+          <div class="terminal-dot red"></div>
+          <div class="terminal-dot yellow"></div>
+          <div class="terminal-dot green"></div>
+          <span class="terminal-title">Git Bash — jslab-project</span>
+        </div>
+        <div class="terminal-body" id="terminal-body">
+          <div class="terminal-line success">Welcome to JSLab Git Simulator!</div>
+          <div class="terminal-line output">Type 'help' to see available commands.</div>
+          <div class="terminal-line output">────────────────────────────────</div>
+        </div>
+        <div style="padding:8px 14px;border-top:1px solid #30363d;">
+          <div class="terminal-input-line">
+            <span class="terminal-prompt" id="terminal-prompt">~/jslab-project (main) $</span>
+            <input type="text" class="terminal-input" id="terminal-input" placeholder="Type a git command..." autofocus>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Practice Scenarios -->
+    <div class="section">
+      <div class="section-header"><h2>🎯 Practice Scenarios</h2></div>
+      <div class="glass-card scenario-card">
+        <h4>Scenario 1: Start a New Project</h4>
+        <ol class="scenario-steps">
+          <li>Create a new repository: <code>git init</code></li>
+          <li>Create files: <code>touch index.html style.css</code></li>
+          <li>Stage all files: <code>git add .</code></li>
+          <li>Make your first commit: <code>git commit -m "Initial commit"</code></li>
+          <li>Check your log: <code>git log --oneline</code></li>
+        </ol>
+      </div>
+      <div class="glass-card scenario-card">
+        <h4>Scenario 2: Feature Branch Workflow</h4>
+        <ol class="scenario-steps">
+          <li>Create a feature branch: <code>git checkout -b feature-nav</code></li>
+          <li>Make changes and stage: <code>git add .</code></li>
+          <li>Commit: <code>git commit -m "Add navigation bar"</code></li>
+          <li>Switch back to main: <code>git checkout main</code></li>
+          <li>Merge the feature: <code>git merge feature-nav</code></li>
+          <li>Delete the branch: <code>git branch -d feature-nav</code></li>
+        </ol>
+      </div>
+      <div class="glass-card scenario-card">
+        <h4>Scenario 3: Push to GitHub</h4>
+        <ol class="scenario-steps">
+          <li>Add remote: <code>git remote add origin https://github.com/user/repo.git</code></li>
+          <li>Push to GitHub: <code>git push -u origin main</code></li>
+          <li>Pull latest changes: <code>git pull origin main</code></li>
+        </ol>
+      </div>
+    </div>
+
+    <footer class="site-footer">Built by Pranav Pushya | Frontend Engineering-1 | Chitkara University</footer>
+  </main>
+</div>
+
+<button class="back-to-top" id="back-to-top" aria-label="Back to top">↑</button>
+
+<script src="../js/progress.js"></script>
+<script src="../js/main.js"></script>
+<script src="../js/git-simulator.js"></script>
+</body>
+</html>

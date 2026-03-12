@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="JSLab Quizzes — Test your JavaScript knowledge with ST1, ST2, and End Term exam practice.">
+  <title>Quizzes — JSLab</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='12' fill='%23f7df1e'/><text x='50' y='65' font-size='42' font-weight='bold' text-anchor='middle' fill='%23000'>JS</text></svg>">
+  <link rel="stylesheet" href="../css/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<div class="top-progress-bar"><div class="fill" id="top-fill"></div></div>
+<button class="sidebar-toggle" id="sidebar-toggle" aria-label="Toggle sidebar">☰</button>
+
+<nav class="sidebar" id="sidebar" aria-label="Main navigation">
+  <div class="sidebar-header">
+    <div class="sidebar-logo">
+      <div class="logo-icon">JS</div>
+      <div class="logo-text">JS<span>Lab</span></div>
+    </div>
+  </div>
+  <div class="sidebar-nav">
+    <a href="../index.html"><span class="nav-icon">🏠</span> Home</a>
+    <a href="tutorials.html"><span class="nav-icon">📖</span> Tutorials</a>
+    <a href="playground.html"><span class="nav-icon">💻</span> Playground</a>
+    <a href="quizzes.html" class="active"><span class="nav-icon">📝</span> Quizzes</a>
+    <a href="git.html"><span class="nav-icon">🔧</span> Git Lab</a>
+  </div>
+  <div class="sidebar-footer">Built by Pranav Pushya<br>Frontend Engineering-1 | Chitkara University</div>
+</nav>
+
+<div class="app-container">
+  <main class="main-content">
+    <div class="section-header" style="margin-bottom:16px;">
+      <h1 style="font-size:1.8rem;">📝 Quizzes</h1>
+      <p>Practice for your Sessional Tests and End Term</p>
+    </div>
+
+    <!-- Mode Selection Screen -->
+    <div id="quiz-home">
+      <div class="quiz-mode-grid">
+        <div class="glass-card quiz-mode-card" data-mode="st1">
+          <div class="mode-icon">📋</div>
+          <h3>ST1 Practice</h3>
+          <p>Lectures 1–18 | 20 Questions | 20 min</p>
+        </div>
+        <div class="glass-card quiz-mode-card" data-mode="st2">
+          <div class="mode-icon">📑</div>
+          <h3>ST2 Practice</h3>
+          <p>Lectures 1–40 | 30 Questions | 30 min</p>
+        </div>
+        <div class="glass-card quiz-mode-card" data-mode="endterm">
+          <div class="mode-icon">📚</div>
+          <h3>End Term Practice</h3>
+          <p>Full syllabus | 40 Questions | 45 min</p>
+        </div>
+        <div class="glass-card quiz-mode-card" data-mode="unit">
+          <div class="mode-icon">🎯</div>
+          <h3>Unit-wise Practice</h3>
+          <p>Choose a specific unit | 15 Questions | No timer</p>
+        </div>
+      </div>
+
+      <!-- Unit selector (hidden by default) -->
+      <div id="unit-selector" style="display:none;margin-top:20px;">
+        <div class="glass-card" style="padding:20px;">
+          <h3 style="margin-bottom:12px;">Select a Unit</h3>
+          <div style="display:flex;gap:12px;flex-wrap:wrap;">
+            <button class="btn btn-primary" data-unit-start="1">Unit 1: JS Fundamentals</button>
+            <button class="btn btn-primary" data-unit-start="2">Unit 2: DOM & BOM</button>
+            <button class="btn btn-primary" data-unit-start="3">Unit 3: Async & Git</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Score History -->
+      <div class="section" style="margin-top:32px;">
+        <div class="section-header"><h2>📊 Score History</h2></div>
+        <div class="glass-card" id="score-history">
+          <p style="color:var(--text-secondary);text-align:center;padding:16px;">No quiz attempts yet. Start practicing!</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Active Quiz Screen -->
+    <div id="quiz-active" style="display:none;">
+      <div class="glass-card" style="margin-bottom:16px;">
+        <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;">
+          <div>
+            <span id="quiz-mode-label" class="badge" style="background:rgba(79,195,247,0.15);color:var(--accent-blue);font-size:14px;">ST1</span>
+            <span class="quiz-progress-text" id="quiz-progress">Q 1 / 20</span>
+          </div>
+          <div class="quiz-timer" id="quiz-timer">20:00</div>
+          <button class="btn btn-error btn-sm" id="quit-quiz">✕ Quit</button>
+        </div>
+      </div>
+      <div id="quiz-question-area"></div>
+      <div style="display:flex;justify-content:space-between;margin-top:20px;" id="quiz-nav">
+        <button class="btn btn-secondary" id="prev-q" disabled>← Previous</button>
+        <button class="btn btn-primary" id="next-q">Next →</button>
+        <button class="btn btn-success" id="submit-quiz" style="display:none;">✓ Submit Quiz</button>
+      </div>
+    </div>
+
+    <!-- Results Screen -->
+    <div id="quiz-results" style="display:none;"></div>
+
+    <footer class="site-footer">Built by Pranav Pushya | Frontend Engineering-1 | Chitkara University</footer>
+  </main>
+</div>
+
+<button class="back-to-top" id="back-to-top" aria-label="Back to top">↑</button>
+
+<script src="../js/progress.js"></script>
+<script src="../js/main.js"></script>
+<script src="../js/tutorials-data.js"></script>
+<script src="../js/tutorials-data2.js"></script>
+<script src="../js/tutorials-data3.js"></script>
+<script src="../js/quizzes.js"></script>
+</body>
+</html>
